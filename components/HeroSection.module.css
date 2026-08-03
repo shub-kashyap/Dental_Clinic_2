@@ -1,0 +1,390 @@
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding-top: 120px;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(8, 19, 32, 0.9) 0%,
+    rgba(13, 27, 42, 0.78) 50%,
+    rgba(13, 27, 42, 0.6) 100%
+  );
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+/* Left column */
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.heroBadge {
+  display: inline-flex;
+  width: fit-content;
+}
+
+.greenDot {
+  display: none; /* handled by ::before in badge class */
+}
+
+.heroHeading {
+  color: white;
+  line-height: 1.08;
+}
+
+.heroHeadingAccent {
+  color: var(--accent-cyan);
+}
+
+.heroDesc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+.heroCtas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.heroBtnPrimary {
+  font-size: 1rem;
+  padding: 15px 32px;
+}
+
+.arrowCircle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  font-size: 0.85rem;
+}
+
+.heroBtnSecondary {
+  font-size: 1rem;
+  padding: 15px 32px;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.heroBtnSecondary:hover {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Social Proof */
+.socialProof {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 10px;
+}
+
+.avatarGroup {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  margin-left: -10px;
+  transition: transform 0.2s ease;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar:hover {
+  transform: scale(1.15) translateY(-3px);
+  z-index: 10;
+}
+
+.proofText {
+  display: flex;
+  flex-direction: column;
+}
+
+.proofText strong {
+  font-size: 1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.proofText span {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Right column — floating cards */
+.heroRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-end;
+}
+
+/* Doctor card */
+.doctorCard {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 360px;
+}
+
+.doctorInfo {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.doctorAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 3px solid #2D7DD2;
+}
+
+.doctorName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0D1B2A;
+}
+
+.doctorRole {
+  font-size: 0.8rem;
+  color: #5a6a7e;
+  margin-bottom: 4px;
+}
+
+.starRow {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.star {
+  color: #FFA726;
+  font-size: 0.9rem;
+}
+
+.ratingNum {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0D1B2A;
+  margin-left: 4px;
+}
+
+/* Stats card */
+.statsCard {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 360px;
+}
+
+.statsCardHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.statsIcon {
+  font-size: 1.2rem;
+}
+
+.statsTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0D1B2A;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: #5a6a7e;
+}
+
+.statValue {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.statValue strong {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0D1B2A;
+}
+
+.statUp {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4CAF50;
+}
+
+.statSub {
+  font-size: 0.7rem;
+  color: #8a9ab0;
+}
+
+.statBar {
+  height: 4px;
+  background: #f0f0f0;
+  border-radius: 2px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+.statBarFill {
+  height: 100%;
+  border-radius: 2px;
+  transition: width 1s ease;
+}
+
+/* Feature Strip */
+.featuresStripWrap {
+  position: relative;
+  z-index: 5;
+  margin-top: -50px;
+}
+
+.featuresStrip {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 28px 32px;
+  border: 1px solid var(--border-light);
+}
+
+.featureBox {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.featIcon {
+  font-size: 1.8rem;
+  padding: 10px;
+  border-radius: var(--radius-md);
+  background: var(--bg-light);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.featTitle {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.featDesc {
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .heroRight {
+    align-items: center;
+  }
+
+  .featuresStrip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .heroContent {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+
+  .featuresStrip {
+    grid-template-columns: 1fr;
+  }
+
+  .heroCtas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

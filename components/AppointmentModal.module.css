@@ -1,0 +1,327 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 27, 42, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.25s ease;
+}
+
+.modal {
+  background: white;
+  width: 100%;
+  max-width: 680px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: scaleIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modalHeader {
+  padding: 24px 30px;
+  background: var(--primary-dark);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badgeText {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent-cyan);
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.closeBtn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.closeBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.progressRow {
+  display: flex;
+  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-light);
+}
+
+.stepIndicator {
+  flex: 1;
+  padding: 14px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.stepIndicator span {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  color: white;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activeStep {
+  color: var(--accent-blue);
+  background: white;
+}
+
+.activeStep span {
+  background: var(--accent-blue);
+}
+
+.stepBody {
+  padding: 28px 30px;
+}
+
+.sectionTitle {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-gray);
+  margin-bottom: 14px;
+}
+
+.topMargin {
+  margin-top: 24px;
+}
+
+.gridCards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.selectionCard {
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: var(--transition);
+  background: white;
+}
+
+.selectionCard:hover {
+  border-color: var(--accent-blue-light);
+}
+
+.selectedCard {
+  border-color: var(--accent-blue);
+  background: rgba(45, 125, 210, 0.04);
+  box-shadow: 0 4px 12px rgba(45, 125, 210, 0.12);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.cardPrice {
+  color: var(--accent-blue);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.docRating {
+  color: #f59e0b;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.cardDuration {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  margin-top: 4px;
+}
+
+.actionRow {
+  margin-top: 28px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actionRowSpace {
+  margin-top: 28px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.fullWidth {
+  grid-column: span 2;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.input:focus {
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(45, 125, 210, 0.15);
+}
+
+.timeSlotsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.timeBtn {
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  background: var(--bg-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: var(--transition);
+}
+
+.timeActive {
+  background: var(--accent-blue);
+  color: white;
+  border-color: var(--accent-blue);
+}
+
+.confirmationBody {
+  padding: 40px 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.successBadge {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--green-dot);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 8px 24px rgba(76, 175, 80, 0.35);
+  margin-bottom: 16px;
+}
+
+.confTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.confSub {
+  font-size: 1rem;
+  color: var(--text-gray);
+  margin-top: 6px;
+}
+
+.ticketBox {
+  width: 100%;
+  background: var(--bg-light);
+  border: 2px dashed var(--accent-blue);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin: 24px 0;
+  text-align: left;
+}
+
+.ticketHeader {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-light);
+  font-size: 0.85rem;
+  color: var(--text-gray);
+}
+
+.ticketHeader strong {
+  color: var(--accent-blue);
+  font-size: 1.1rem;
+}
+
+.ticketGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.lbl {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-light);
+}
+
+@media (max-width: 600px) {
+  .gridCards, .formGrid, .ticketGrid {
+    grid-template-columns: 1fr;
+  }
+  .fullWidth {
+    grid-column: span 1;
+  }
+}

@@ -1,0 +1,140 @@
+.faqSection {
+  background: var(--bg-light);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  margin-top: 12px;
+  color: var(--text-dark);
+}
+
+.desc {
+  margin-top: 16px;
+  font-size: 1.05rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+.helpBox {
+  margin-top: 36px;
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-left: 4px solid var(--accent-blue);
+}
+
+.helpIcon {
+  font-size: 2rem;
+}
+
+.helpBox strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+.helpBox p {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  margin-top: 2px;
+}
+
+.helpBox a {
+  color: var(--accent-blue);
+  font-weight: 700;
+}
+
+/* Accordion */
+.accordionList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.item {
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-light);
+  padding: 20px 24px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.item:hover {
+  border-color: var(--accent-blue-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.itemOpen {
+  border-color: var(--accent-blue);
+  box-shadow: 0 4px 20px rgba(45, 125, 210, 0.1);
+}
+
+.itemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.question {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-dark);
+
+}
+
+.toggleIcon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg-light);
+  color: var(--accent-blue);
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.itemOpen .toggleIcon {
+  background: var(--accent-blue);
+  color: white;
+}
+
+.itemBody {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-light);
+  animation: fadeIn 0.3s ease;
+}
+
+.answer {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

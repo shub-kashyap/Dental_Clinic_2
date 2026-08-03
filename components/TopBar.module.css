@@ -1,0 +1,82 @@
+.topBar {
+  background: var(--primary-darker);
+  color: #a0aec0;
+  font-size: 0.82rem;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoLeft, .infoRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.infoItem, .hoursItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #cbd5e1;
+  transition: var(--transition);
+}
+
+.infoItem:hover {
+  color: var(--accent-cyan);
+}
+
+.infoItem strong {
+  color: white;
+}
+
+.waLink:hover {
+  color: #25d366 !important;
+}
+
+.waLink:hover strong {
+  color: #25d366 !important;
+}
+
+.waIcon {
+  font-size: 0.95rem;
+}
+
+.icon {
+  font-size: 0.85rem;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.socialGroup {
+  display: flex;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.socialIcon {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.socialIcon:hover {
+  color: white;
+  background: var(--accent-blue);
+}
+
+@media (max-width: 900px) {
+  .topBar {
+    display: none;
+  }
+}

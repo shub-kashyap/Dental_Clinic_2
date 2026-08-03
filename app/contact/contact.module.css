@@ -1,0 +1,28 @@
+/* Contact page banner */
+.pageBanner {
+  background: linear-gradient(135deg, #0D1B2A 0%, #152b44 100%);
+  padding: 160px 0 100px;
+  text-align: center;
+}
+
+.bannerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.bannerContent h1 {
+  color: white;
+}
+
+.accent {
+  color: #29B6F6;
+}
+
+.bannerDesc {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.65);
+  max-width: 480px;
+  line-height: 1.75;
+}
