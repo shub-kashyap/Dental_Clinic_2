@@ -87,6 +87,8 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 /* Specialty Overview Card (Matching Screenshot 2 Card) */
@@ -98,6 +100,8 @@
   border: 1px solid #e8ecf0;
   position: relative;
   overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .specialtyCard::before {
@@ -117,6 +121,8 @@
   color: #0D1B2A;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .cardCategoryDesc {
@@ -125,6 +131,8 @@
   line-height: 1.7;
   max-width: 820px;
   margin-bottom: 2rem;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .detailsColumns {
@@ -300,18 +308,24 @@
   font-weight: 700;
   color: #2D7DD2;
   letter-spacing: 0.04em;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .doctorName {
   font-size: 1.3rem;
   font-weight: 800;
   color: #0D1B2A;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .doctorRole {
   font-size: 0.88rem;
   color: #5a6a7e;
   font-weight: 600;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .specList {
@@ -435,28 +449,96 @@
 @media (max-width: 1024px) {
   .mainLayout {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .sidebar {
     position: static;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .categoryList {
+    display: flex;
     flex-direction: row;
     overflow-x: auto;
+    width: 100%;
+    max-width: 100%;
     padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    gap: 8px;
+    box-sizing: border-box;
   }
 
   .categoryBtn {
     white-space: nowrap;
+    flex-shrink: 0;
+    padding: 10px 16px;
+    font-size: 0.85rem;
   }
 
   .doctorsGrid {
     grid-template-columns: 1fr;
+    width: 100%;
   }
 }
 
 @media (max-width: 640px) {
+  .doctorsSection {
+    padding: 30px 0 60px;
+  }
+
+  .specialtyCard {
+    padding: 1.25rem;
+    border-radius: 18px;
+  }
+
+  .cardCategoryTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardCategoryDesc {
+    font-size: 0.92rem;
+    margin-bottom: 1rem;
+  }
+
+  .doctorCard {
+    border-radius: 18px;
+  }
+
+  .cardImageWrap {
+    height: 260px;
+  }
+
+  .cardContent {
+    padding: 1.25rem;
+    gap: 1rem;
+  }
+
+  .doctorName {
+    font-size: 1.15rem;
+  }
+
+  .doctorDegree {
+    font-size: 0.72rem;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.8rem;
+  }
+
+  .bookBtn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+
   .detailsColumns {
     grid-template-columns: 1fr;
   }
@@ -467,9 +549,12 @@
 
   .qualityBox {
     grid-template-columns: 1fr;
-    padding: 2rem;
+    padding: 1.5rem;
+    border-radius: 20px;
+    gap: 1.5rem;
   }
 }
+
 
 /* Biography styling */
 .doctorBio {

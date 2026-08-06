@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Logo from './Logo';
 import styles from './Preloader.module.css';
 
 export default function Preloader() {
@@ -11,6 +12,14 @@ export default function Preloader() {
 
   useEffect(() => {
     setMounted(true);
+
+    // Reset scroll position to top on page refresh / load
+    if (typeof window !== 'undefined') {
+      if ('scrollRestoration' in window.history) {
+        window.history.scrollRestoration = 'manual';
+      }
+      window.scrollTo(0, 0);
+    }
 
     // Animate progress bar from 0 to 100
     const interval = setInterval(() => {
@@ -42,25 +51,10 @@ export default function Preloader() {
     <div className={`${styles.preloader} ${fadeOut ? styles.fadeOut : ''}`}>
       <div className={styles.loaderContent}>
         {/* Animated Logo */}
-        <div className={styles.logoRing}>
-          <div className={styles.pulseRing} />
-          <svg width="60" height="60" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" fill="#0D1B2A" />
-            <path
-              d="M20 8C16 8 13 11 13 14c0 2 1 4 1.5 6s0.5 5-1.5 8c3-1 4-4 5-4s2 4 5 4c-2-3-2-6-1.5-8s1.5-4 1.5-6c0-3-3-6-7-6z"
-              fill="#2D7DD2"
-              stroke="#29B6F6"
-              strokeWidth="0.5"
-            />
-            <circle cx="17" cy="15" r="1.5" fill="white" opacity="0.8" />
-          </svg>
+        <div className={styles.logoHolder} style={{ marginBottom: '24px', display: 'flex', justifyContent: 'center' }}>
+          <Logo variant="light" height={68} />
         </div>
 
-        {/* Brand Text */}
-        <div className={styles.brandTitle}>
-          <span className={styles.brandName}>SHIVAM DENTAL</span>
-          <span className={styles.brandSub}>Care & Implant Centre</span>
-        </div>
 
         {/* Progress Bar & Percentage */}
         <div className={styles.progressTrack}>

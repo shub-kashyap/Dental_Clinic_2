@@ -2,7 +2,6 @@ import Header from '@/components/Header';
 import PageBanner from '@/components/PageBanner';
 import AboutSection from '@/components/AboutSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import TeamSection from '@/components/TeamSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import FaqSection from '@/components/FaqSection';
 import Footer from '@/components/Footer';
@@ -28,7 +27,6 @@ export default function AboutPage() {
 
         <AboutSection />
         <WhyChooseUs />
-        <TeamSection />
         <TestimonialsSection />
         <FaqSection />
       </main>

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Logo from './Logo';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -21,21 +22,8 @@ export default function Footer() {
         <div className={styles.footerGrid}>
           {/* Brand */}
           <div className={styles.brandCol}>
-            <Link href="/" onClick={handleHomeClick} className={styles.footerLogo}>
-              <svg width="36" height="36" viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="20" r="20" fill="rgba(45,125,210,0.15)" />
-                <path
-                  d="M20 8C16 8 13 11 13 14c0 2 1 4 1.5 6s0.5 5-1.5 8c3-1 4-4 5-4s2 4 5 4c-2-3-2-6-1.5-8s1.5-4 1.5-6c0-3-3-6-7-6z"
-                  fill="#2D7DD2"
-                  stroke="#29B6F6"
-                  strokeWidth="0.5"
-                />
-                <circle cx="17" cy="15" r="1.5" fill="white" opacity="0.8" />
-              </svg>
-              <div>
-                <span className={styles.footerLogoName}>SHIVAM DENTAL</span>
-                <span className={styles.footerLogoSub}>Care & Implant Centre</span>
-              </div>
+            <Link href="/" onClick={handleHomeClick} aria-label="Shivam Dental Care & Implant Centre Home">
+              <Logo variant="light" height={52} />
             </Link>
             <p className={styles.brandDesc}>
               Delivering world-class dental care with compassion, technology, and expertise.

@@ -26,12 +26,12 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '' 
   if (!isOpen) return null;
 
   const servicesList = [
-    { id: 'general', name: 'General Dentistry Checkup', duration: '45 mins', price: '$99' },
-    { id: 'whitening', name: 'Teeth Whitening Treatment', duration: '60 mins', price: '$299' },
-    { id: 'implants', name: 'Dental Implant Consultation', duration: '60 mins', price: 'Free' },
-    { id: 'orthodontics', name: 'Orthodontics & Clear Aligners', duration: '45 mins', price: '$150' },
-    { id: 'root-canal', name: 'Root Canal & Endodontics', duration: '90 mins', price: '$450' },
-    { id: 'surgery', name: 'Oral Surgery & Extractions', duration: '60 mins', price: '$350' },
+    { id: 'general', name: 'General Dentistry Checkup', duration: '45 mins' },
+    { id: 'whitening', name: 'Teeth Whitening Treatment', duration: '60 mins' },
+    { id: 'implants', name: 'Dental Implant Consultation', duration: '60 mins' },
+    { id: 'orthodontics', name: 'Orthodontics & Clear Aligners', duration: '45 mins' },
+    { id: 'root-canal', name: 'Root Canal & Endodontics', duration: '90 mins' },
+    { id: 'surgery', name: 'Oral Surgery & Extractions', duration: '60 mins' },
   ];
 
   const doctorsList = [
@@ -99,7 +99,6 @@ export default function AppointmentModal({ isOpen, onClose, initialService = '' 
                 >
                   <div className={styles.cardHeader}>
                     <strong>{srv.name}</strong>
-                    <span className={styles.cardPrice}>{srv.price}</span>
                   </div>
                   <span className={styles.cardDuration}>⏱ {srv.duration}</span>
                 </div>

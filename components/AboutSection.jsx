@@ -144,7 +144,7 @@ export default function AboutSection() {
                   With advanced qualifications from Stony Brook University (New York) and Manipal University, Dr. Rajesh and Dr. (Maj) Geetika provide world-class implantology, cosmetic dentistry, and comprehensive oral care.
                 </p>
                 <Link href="/doctors" className={`btn btn-primary ${styles.learnMoreBtn}`}>
-                  Meet All Doctors ↗
+                  Meet Our Doctors ↗
                 </Link>
               </div>
             </div>

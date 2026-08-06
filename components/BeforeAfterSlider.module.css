@@ -82,16 +82,10 @@
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   height: 100%;
-  overflow: hidden;
   z-index: 2;
-  border-right: 2px solid white;
-}
-
-/* Ensure inner image maintains container dimensions */
-.beforeLayer :global(img) {
-  width: 1000px !important;
-  max-width: none !important;
+  /* clip-path is set inline via style prop — both images render at identical full size */
 }
 
 .label {
@@ -212,6 +206,38 @@
     align-items: flex-start;
   }
   .comparisonContainer {
-    height: 340px;
+    height: 360px;
   }
 }
+
+@media (max-width: 640px) {
+  .tabGroup {
+    flex-direction: column;
+    width: 100%;
+    border-radius: var(--radius-md);
+  }
+  .tabBtn {
+    text-align: center;
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+  }
+  .widgetWrap {
+    padding: 14px;
+  }
+  .comparisonContainer {
+    height: 280px;
+  }
+  .label {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    bottom: 12px;
+  }
+  .labelBefore {
+    left: 12px;
+  }
+  .labelAfter {
+    right: 12px;
+  }
+}
+

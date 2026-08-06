@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useRef, useEffect, useCallback } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from './BeforeAfterSlider.module.css';
 
@@ -69,12 +68,15 @@ export default function BeforeAfterSlider() {
     };
   }, [isDragging, handleMove]);
 
+  // Single composite image (before=left half, after=right half).
+  // Using background-size:200% so both layers render the same image at the
+  // same scale — left-positioned = before, right-positioned = after.
+  // This guarantees pixel-perfect alignment regardless of container size.
   const tabsData = {
     whitening: {
       title: 'Professional Teeth Whitening',
       desc: 'See the remarkable difference 45 minutes of laser whitening can make for your confidence.',
-      beforeImg: '/images/dental_before.jpg',
-      afterImg: '/images/dental_after.jpg',
+      compositeImg: '/images/dental_composite.jpg',
       stat1: '8 Shades',
       stat1Label: 'Whiter in 1 Visit',
       stat2: '100%',
@@ -83,8 +85,7 @@ export default function BeforeAfterSlider() {
     implants: {
       title: 'Full-Arch Dental Implants',
       desc: 'Restoring natural appearance, bite function, and structural facial support seamlessly.',
-      beforeImg: '/images/dental_before.jpg',
-      afterImg: '/images/dental_after.jpg',
+      compositeImg: '/images/dental_composite.jpg',
       stat1: '99.8%',
       stat1Label: 'Implant Success Rate',
       stat2: 'Lifetime',
@@ -93,8 +94,7 @@ export default function BeforeAfterSlider() {
     aligners: {
       title: 'Invisalign Clear Aligners',
       desc: 'Discreet, removable aligners that gently guide teeth into flawless alignment without metal braces.',
-      beforeImg: '/images/dental_before.jpg',
-      afterImg: '/images/dental_after.jpg',
+      compositeImg: '/images/dental_composite.jpg',
       stat1: '6 Months',
       stat1Label: 'Average Treatment Time',
       stat2: 'Invisible',
@@ -151,32 +151,30 @@ export default function BeforeAfterSlider() {
             onMouseDown={handleMouseDown}
             onTouchStart={handleTouchStart}
           >
-            {/* After Image (Background) */}
-            <div className={styles.afterLayer}>
-              <Image
-                src={currentTab.afterImg}
-                alt="After Dental Treatment - Bright Smile"
-                fill
-                sizes="(max-width: 768px) 100vw, 800px"
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-                priority
-              />
+            {/* AFTER layer — right half of composite (background-position: right) */}
+            <div
+              className={styles.afterLayer}
+              style={{
+                backgroundImage: `url(${currentTab.compositeImg})`,
+                backgroundSize: '200% auto',
+                backgroundPosition: 'right center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
               <span className={`${styles.label} ${styles.labelAfter}`}>AFTER</span>
             </div>
 
-            {/* Before Image (Clipped Foreground) */}
+            {/* BEFORE layer — left half of composite (background-position: left), clipped by slider */}
             <div
               className={styles.beforeLayer}
-              style={{ width: `${sliderPos}%` }}
+              style={{
+                clipPath: `inset(0 ${100 - sliderPos}% 0 0)`,
+                backgroundImage: `url(${currentTab.compositeImg})`,
+                backgroundSize: '200% auto',
+                backgroundPosition: 'left center',
+                backgroundRepeat: 'no-repeat',
+              }}
             >
-              <Image
-                src={currentTab.beforeImg}
-                alt="Before Dental Treatment"
-                fill
-                sizes="(max-width: 768px) 100vw, 800px"
-                style={{ objectFit: 'cover', objectPosition: 'center' }}
-                priority
-              />
               <span className={`${styles.label} ${styles.labelBefore}`}>BEFORE</span>
             </div>
 

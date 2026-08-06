@@ -5,7 +5,6 @@ import AboutSection from '@/components/AboutSection';
 import ServicesSection from '@/components/ServicesSection';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import TestimonialsSection from '@/components/TestimonialsSection';
-import TeamSection from '@/components/TeamSection';
 import FaqSection from '@/components/FaqSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -22,7 +21,6 @@ export default function HomePage() {
         <ServicesSection />
         <WhyChooseUs />
         <TestimonialsSection />
-        <TeamSection />
         <FaqSection />
         <ContactSection />
       </main>
@@ -33,3 +31,4 @@ export default function HomePage() {
     </>
   );
 }
+

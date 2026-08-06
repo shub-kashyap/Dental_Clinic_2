@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Logo from './Logo';
 import styles from './Navbar.module.css';
 
 export default function Navbar({ scrolled: externalScrolled }) {
@@ -53,22 +54,9 @@ export default function Navbar({ scrolled: externalScrolled }) {
   return (
     <nav className={`${styles.navbar} ${isScrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`}>
-        {/* Logo & Company Name */}
-        <Link href="/" onClick={handleLogoClick} className={styles.logo}>
-          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="20" cy="20" r="20" fill={isScrolled ? '#0D1B2A' : 'rgba(255,255,255,0.15)'} />
-            <path
-              d="M20 8C16 8 13 11 13 14c0 2 1 4 1.5 6s0.5 5-1.5 8c3-1 4-4 5-4s2 4 5 4c-2-3-2-6-1.5-8s1.5-4 1.5-6c0-3-3-6-7-6z"
-              fill="#2D7DD2"
-              stroke="#29B6F6"
-              strokeWidth="0.5"
-            />
-            <circle cx="17" cy="15" r="1.5" fill="white" opacity="0.8" />
-          </svg>
-          <div className={styles.logoText}>
-            <span className={styles.logoName}>SHIVAM DENTAL</span>
-            <span className={styles.logoSub}>Care & Implant Centre</span>
-          </div>
+        {/* Official Logo */}
+        <Link href="/" onClick={handleLogoClick} aria-label="Shivam Dental Care & Implant Centre Home">
+          <Logo variant={isScrolled ? 'dark' : 'light'} height={52} />
         </Link>
 
         {/* Desktop Nav */}
@@ -94,58 +82,14 @@ export default function Navbar({ scrolled: externalScrolled }) {
               </Link>
             </li>
 
-            {/* Doctors Mega-Menu Item */}
-            <li
-              className={styles.hasMegaMenu}
-              onMouseEnter={() => setDoctorsDropdownOpen(true)}
-              onMouseLeave={() => setDoctorsDropdownOpen(false)}
-            >
+            <li>
               <Link
                 href="/doctors"
                 onClick={(e) => handleLinkClick('/doctors', e)}
                 className={`${styles.navLink} ${pathname === '/doctors' ? styles.active : ''}`}
               >
-                Doctors <span className={styles.dropdownArrow}>{doctorsDropdownOpen ? '▲' : '▼'}</span>
+                Doctors
               </Link>
-
-              {/* Mega-Menu Dropdown Panel */}
-              <div className={`${styles.megaMenu} ${doctorsDropdownOpen ? styles.megaMenuVisible : ''}`}>
-                <div className={styles.megaHeader}>
-                  <span className={styles.megaIcon}>⚡</span>
-                  <span>DOCTOR SPECIALTIES</span>
-                </div>
-
-                <div className={styles.megaGrid}>
-                  {doctorSpecialties.map((spec, i) => (
-                    <Link
-                      key={i}
-                      href={`/doctors?cat=${spec.category}`}
-                      onClick={() => {
-                        setDoctorsDropdownOpen(false);
-                        setMenuOpen(false);
-                      }}
-                      className={styles.megaItem}
-                    >
-                      <h4 className={styles.megaTitle}>{spec.title}</h4>
-                      <p className={styles.megaDesc}>{spec.desc}</p>
-                    </Link>
-                  ))}
-                </div>
-
-                <div className={styles.megaFooter}>
-                  <span className={styles.megaQuality}>ISO 9001:2015 Quality Standards</span>
-                  <Link
-                    href="/doctors"
-                    onClick={() => {
-                      setDoctorsDropdownOpen(false);
-                      setMenuOpen(false);
-                    }}
-                    className={styles.megaCatalogueLink}
-                  >
-                    View All Doctors ↗
-                  </Link>
-                </div>
-              </div>
             </li>
 
             <li>

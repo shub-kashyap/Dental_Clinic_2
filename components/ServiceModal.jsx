@@ -41,8 +41,8 @@ export default function ServiceModal({ service, isOpen, onClose }) {
               <strong className={styles.detailVal}>✨ {service.recovery || 'Immediate / Same Day'}</strong>
             </div>
             <div className={styles.detailBox}>
-              <span className={styles.detailLbl}>Price Range</span>
-              <strong className={styles.detailVal}>🏷️ {service.price || 'From $99'}</strong>
+              <span className={styles.detailLbl}>Care Level</span>
+              <strong className={styles.detailVal}>🏥 Certified Specialist</strong>
             </div>
           </div>
 

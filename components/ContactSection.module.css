@@ -251,7 +251,12 @@
 
 @media (max-width: 640px) {
   .ctaBanner {
-    padding: 50px 0 40px;
+    padding: 40px 0 35px;
+  }
+
+  .formCard {
+    padding: 1.25rem;
+    border-radius: 20px;
   }
 
   .formRow {
@@ -262,3 +267,4 @@
     grid-template-columns: 1fr;
   }
 }
+

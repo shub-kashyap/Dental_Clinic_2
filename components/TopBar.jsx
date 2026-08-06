@@ -9,8 +9,8 @@ export default function TopBar() {
         {/* Left Info items */}
         <div className={styles.infoLeft}>
           <a href="tel:+919236118545" className={styles.infoItem}>
-            <span className={styles.icon}>⚡</span>
-            <span>Call/Emergency: <strong>+91 9236118545</strong></span>
+            <span className={styles.icon}>📞</span>
+            <span>Call: <strong>+91 9236118545</strong></span>
           </a>
           <span className={styles.divider}>|</span>
           <a

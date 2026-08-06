@@ -4,21 +4,22 @@
   right: 24px;
   z-index: 9000;
   display: flex;
+  flex-direction: column;
   align-items: center;
   gap: 12px;
   animation: fadeInUp 0.4s ease;
 }
 
 .scrollTopBtn {
-  width: 44px;
-  height: 44px;
+  width: 46px;
+  height: 46px;
   border-radius: 50%;
   background: white;
   color: var(--text-dark);
   font-size: 1.2rem;
   font-weight: 800;
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border-light);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border: 1.5px solid var(--border-light);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,76 +29,61 @@
 .scrollTopBtn:hover {
   background: var(--accent-blue);
   color: white;
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.08);
 }
 
 .emergencyBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   background: var(--primary-dark);
   color: white;
-  padding: 12px 20px;
-  border-radius: var(--radius-xl);
-  font-size: 0.88rem;
-  font-weight: 700;
-  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(13, 27, 42, 0.35);
   transition: var(--transition);
-  position: relative;
 }
 
 .emergencyBtn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(13, 27, 42, 0.4);
-}
-
-.pulseDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: var(--accent-cyan);
-  animation: pulse-dot 1.5s ease-in-out infinite;
+  background: var(--accent-blue);
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(13, 27, 42, 0.5);
 }
 
 .whatsappBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
   background: #25D366;
   color: white;
-  padding: 12px 22px;
-  border-radius: var(--radius-xl);
-  font-size: 0.9rem;
-  font-weight: 700;
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
   transition: var(--transition);
-  position: relative;
 }
 
 .whatsappBtn:hover {
   background: #1eb956;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.55);
-}
-
-.waPulseDot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: white;
-  animation: pulse-dot 1.5s ease-in-out infinite;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.6);
 }
 
 @media (max-width: 600px) {
-  .btnLabel {
-    display: none;
-  }
-  .emergencyBtn, .whatsappBtn {
-    padding: 12px;
-    border-radius: 50%;
-  }
   .floatingBar {
     bottom: 16px;
     right: 16px;
+    gap: 10px;
+  }
+  .emergencyBtn,
+  .whatsappBtn {
+    width: 48px;
+    height: 48px;
+  }
+  .scrollTopBtn {
+    width: 42px;
+    height: 42px;
   }
 }
+

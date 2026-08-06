@@ -19,7 +19,6 @@ const services = [
     duration: '45 Minutes',
     anesthesia: 'None required',
     recovery: 'Immediate',
-    price: '$99',
     features: [
       'Comprehensive dental check-ups & oral cancer screening',
       'Professional ultrasonic plaque & tartar cleaning',
@@ -37,7 +36,6 @@ const services = [
     duration: '45 Minutes',
     anesthesia: 'Optional topical gel',
     recovery: 'Immediate',
-    price: '$120',
     features: [
       'Deep sub-gingival calculus scaling',
       'Enamel stain removal & air-polishing',
@@ -58,7 +56,6 @@ const services = [
     duration: '60 Minutes',
     anesthesia: 'Sensitivity gel applied',
     recovery: 'Immediate bright smile',
-    price: '$299',
     features: [
       'In-office medical-grade UV LED laser activation',
       'Custom-molded take-home maintenance whitening trays',
@@ -76,7 +73,6 @@ const services = [
     duration: '2 Visits (90 Mins each)',
     anesthesia: 'Local anesthesia',
     recovery: '1 - 2 Days',
-    price: 'From $650 / tooth',
     features: [
       'Custom digital smile design preview',
       'Minimal enamel preparation technology',
@@ -96,7 +92,6 @@ const services = [
     duration: '90 Minutes',
     anesthesia: 'Local / Sedation options',
     recovery: '2 - 3 Days mild healing',
-    price: 'From $799',
     features: [
       '3D CBCT bone density & nerve pathway mapping',
       'Surgically placed medical titanium implant post',
@@ -114,7 +109,6 @@ const services = [
     duration: '60 Minutes',
     anesthesia: 'Local anesthesia',
     recovery: 'Immediate',
-    price: '$450',
     features: [
       'Digital 3D CAD/CAM optical impressions',
       'High-strength Zirconia & E-max ceramic',
@@ -134,7 +128,6 @@ const services = [
     duration: '45 Minutes per checkup',
     anesthesia: 'None required',
     recovery: 'Seamless daily wear',
-    price: 'From $150 / mo',
     features: [
       '3D digital smile simulation before starting',
       'Removable crystal-clear Invisalign aligners',
@@ -154,7 +147,6 @@ const services = [
     duration: '75 Minutes',
     anesthesia: 'Deep local anesthesia',
     recovery: '24 Hours',
-    price: '$450',
     features: [
       'Microscopic canal disinfection & cleaning',
       'Biocompatible root sealing & gutta-percha',
@@ -174,7 +166,6 @@ const services = [
     duration: '60 Minutes',
     anesthesia: 'Local / Conscious Sedation',
     recovery: '3 - 5 Days',
-    price: '$350',
     features: [
       'Impaction wisdom tooth surgical removal',
       'Bone grafting & ridge preservation',
@@ -294,7 +285,6 @@ function ServicesSectionContent() {
 
               {/* Content */}
               <div className={styles.cardContent}>
-                <div className={styles.priceTag}>{service.price}</div>
                 <h3
                   className={styles.cardTitle}
                   onClick={() => setActiveModalService(service)}
